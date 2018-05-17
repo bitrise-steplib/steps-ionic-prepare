@@ -103,6 +103,5 @@ inputs:
   - workdir: $BITRISE_SOURCE_DIR
     opts:
       title: Working directory
-      summary: ""
       description: Root directory of your Ionic project, where your Ionic config.xml exists.
       is_required: true

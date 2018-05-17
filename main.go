@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"reflect"
-	"sort"
 	"strings"
 
 	"github.com/bitrise-community/steps-ionic-prepare/cordova"
@@ -28,7 +27,7 @@ type config struct {
 	WorkDir               string `env:"workdir,dir"`
 }
 
-func getField(c config, field string) string {
+func (c config) getField(field string) string {
 	r := reflect.ValueOf(c)
 	f := reflect.Indirect(r).FieldByName(field)
 	return string(f.String())
@@ -140,10 +139,6 @@ func main() {
 	ionicMajorVersion := ionicVer.Segments()[0]
 
 	platforms := strings.Split(cfg.Platform, ",")
-	for i, p := range platforms {
-		platforms[i] = strings.TrimSpace(p)
-	}
-	sort.Strings(platforms)
 
 	// ionic prepare
 	fmt.Println()
@@ -183,7 +178,7 @@ func main() {
 			cmdArgs = append(cmdArgs, "platform", "add")
 
 			platformVersion := platform
-			pv := getField(cfg, "Cordova"+strings.Title(platform)+"Version")
+			pv := cfg.getField("Cordova" + strings.Title(platform) + "Version")
 			if pv == "master" {
 				platformVersion = "https://github.com/apache/cordova-" + platform + ".git"
 			} else if pv != "" {
