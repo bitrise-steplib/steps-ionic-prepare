@@ -28,9 +28,7 @@ type config struct {
 }
 
 func (c config) getField(field string) string {
-	r := reflect.ValueOf(c)
-	f := reflect.Indirect(r).FieldByName(field)
-	return string(f.String())
+	return reflect.ValueOf(c).FieldByName(field).String()
 }
 
 func failf(format string, v ...interface{}) {
