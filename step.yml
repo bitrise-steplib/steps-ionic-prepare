@@ -1,0 +1,107 @@
+title: Ionic prepare
+summary: Prepares your Ionic project
+description: |-
+  Prepares your Ionic project.
+
+  The step prepares your Ionic project by calling:
+
+  - `ionic [cordova] platform rm <platform>`
+  - `ionic [cordova] platform add <platform>`
+
+website: https://github.com/bitrise-community/steps-ionic-prepare
+source_code_url: https://github.com/bitrise-community/steps-ionic-prepare
+support_url: https://github.com/bitrise-community/steps-ionic-prepare/issues
+
+host_os_tags:
+  - osx-10.10
+  - ubuntu-16.04
+
+project_type_tags:
+- ionic
+type_tags:
+- utility
+
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+run_if: ""
+
+toolkit:
+  go:
+    package_name: github.com/bitrise-community/steps-ionic-prepare
+
+inputs:
+  - platform: "ios,android"
+    opts:
+      title: Platform to use in ionic-cli commands
+      description: |-
+        Specify this input to apply ionic-cli commands to desired platforms only.
+
+        `ionic [cordova] platform rm <platform>`
+      value_options:
+      - "ios,android"
+      - "ios"
+      - "android"
+      is_required: true
+  - readd_platform: "true"
+    opts:
+      title: Should remove platforms as prepare step?
+      description: |-
+        Specify whether to remove platforms and then re-add (overwrites some config.xml values).
+
+        `ionic [cordova] platform rm <platform>`
+      value_options:
+      - "true"
+      - "false"
+      is_required: true
+  - ionic_version: 
+    opts:
+      title: Ionic version
+      description: |-
+        The version of ionic you want to use.
+
+        If value is set to `latest`, the step will update to the latest ionic version.
+        Leave this input empty to use the preinstalled ionic version.
+  - cordova_version: 
+    opts:
+      title: Cordova version
+      description: |-
+        The version of cordova you want to use.
+
+        If value is set to `latest`, the step will update to the latest cordova version.
+        Leave this input empty to use the preinstalled cordova version.
+  - cordova_ios_version: 
+    opts:
+      title: "iOS version"
+      description: |-
+        The version of cordova-ios plugin you want to use.
+
+        Should be one of the following:
+
+        - x.x.x - [A specific release](https://github.com/apache/cordova-ios/releases) equivalent to doing `ionic cordova platform add ios@x.x.x`
+
+        - master - will use the master branch of the repo, equivalent to doing `ionic cordova platform add https://github.com/apache/cordova-ios.git`
+
+        - latest - The step will update to the latest cordova-ios version `ionic cordova platform add ios@latest`.
+
+        - empty - Uses the pinned cordova-ios version.
+  - cordova_android_version: 
+    opts:
+      title: "Android version"
+      description: |-
+        The version of cordova-android plugin you want to use.
+
+        Should be one of the following:
+
+        - x.x.x - [A specific release](https://github.com/apache/cordova-android/releases) equivalent to doing `ionic cordova platform add android@x.x.x`
+
+        - master - will use the master branch of the repo, equivalent to doing `ionic cordova platform add https://github.com/apache/cordova-android.git`
+
+        - latest - The step will update to the latest cordova-android version `ionic cordova platform add android@latest`.
+
+        - empty - Uses the pinned cordova-android version.
+  - workdir: $BITRISE_SOURCE_DIR
+    opts:
+      title: Working directory
+      description: Root directory of your Ionic project, where your Ionic config.xml exists.
+      is_required: true
