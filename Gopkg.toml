@@ -11,12 +11,8 @@
   branch = "master"
 
 [[constraint]]
-  name = "github.com/pkg/errors"
-  branch = "master"
-
-[[constraint]]
   name = "github.com/bitrise-community/steps-ionic-archive"
-  branch = "feature/remove-platform-add"
+  branch = "master"
 
 [prune]
   go-tests = true

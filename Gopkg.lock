@@ -2,15 +2,15 @@
 
 
 [[projects]]
-  branch = "feature/remove-platform-add"
-  digest = "1:7dba205b8a4646105284025a6cfe56833560ecb05862cadc258dc5b6210b9565"
+  branch = "master"
+  digest = "1:a8eecc71a8044002f95a1da3ac6df70c5ede5665ced304a8f9a40c8b55752e60"
   name = "github.com/bitrise-community/steps-ionic-archive"
   packages = [
     "ionic",
     "jsdependency",
   ]
   pruneopts = "UT"
-  revision = "02228874574fa863820015e29b98a00540774380"
+  revision = "7869644a568b04e31b29def8df7233b3a9466ea8"
 
 [[projects]]
   branch = "master"
@@ -59,12 +59,11 @@
     "github.com/bitrise-community/steps-ionic-archive/ionic",
     "github.com/bitrise-community/steps-ionic-archive/jsdependency",
     "github.com/bitrise-io/go-utils/colorstring",
-    "github.com/bitrise-io/go-utils/command",
+    "github.com/bitrise-io/go-utils/errorutil",
     "github.com/bitrise-io/go-utils/log",
     "github.com/bitrise-io/go-utils/pathutil",
     "github.com/bitrise-tools/go-steputils/stepconf",
     "github.com/hashicorp/go-version",
-    "github.com/pkg/errors",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
