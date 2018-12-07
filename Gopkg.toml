@@ -11,7 +11,7 @@
   branch = "master"
 
 [[constraint]]
-  name = "github.com/pkg/errors"
+  name = "github.com/bitrise-community/steps-ionic-archive"
   branch = "master"
 
 [prune]
