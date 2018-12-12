@@ -5,8 +5,7 @@ description: |-
 
   The step prepares your Ionic project by calling:
 
-  - `ionic [cordova] platform rm <platform>`
-  - `ionic [cordova] platform add <platform>`
+  - `ionic cordova "prepare" "--no-build"`
 
 website: https://github.com/bitrise-community/steps-ionic-prepare
 source_code_url: https://github.com/bitrise-community/steps-ionic-prepare
