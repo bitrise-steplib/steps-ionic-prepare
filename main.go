@@ -24,6 +24,8 @@ type config struct {
 
 	Username string `env:"ionic_username"`
 	Password string `env:"ionic_password"`
+
+	UseCache bool `env:"cache_local_deps,opt[true,false]"`
 }
 
 func installDependency(packageManager jsdependency.Tool, name string, version string) error {
@@ -183,5 +185,11 @@ func main() {
 
 	if err := cmd.Run(); err != nil {
 		failf("ionic prepare command %s failed, error: %s", cmd.PrintableCommandArgs(), err)
+	}
+
+	if cfg.UseCache {
+		if err := cacheNpm(workDir); err != nil {
+			log.Warnf("Failed to mark files for caching, error: %s", err)
+		}
 	}
 }

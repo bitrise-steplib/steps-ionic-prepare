@@ -14,6 +14,17 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:594d51ad1ed8d44086145528a32b5e403c43195c0b236a2f6e116e00baa2c0eb"
+  name = "github.com/bitrise-io/go-steputils"
+  packages = [
+    "cache",
+    "tools",
+  ]
+  pruneopts = "UT"
+  revision = "f540824d77dfd382ce84fd0ee0a9da2fba1cce0a"
+
+[[projects]]
+  branch = "master"
   digest = "1:540197e862f6636ae91ab877d55ac9c44d3b147c407a5db134d3cbb5f8178c1e"
   name = "github.com/bitrise-io/go-utils"
   packages = [
@@ -58,6 +69,7 @@
   input-imports = [
     "github.com/bitrise-community/steps-ionic-archive/ionic",
     "github.com/bitrise-community/steps-ionic-archive/jsdependency",
+    "github.com/bitrise-io/go-steputils/cache",
     "github.com/bitrise-io/go-utils/colorstring",
     "github.com/bitrise-io/go-utils/errorutil",
     "github.com/bitrise-io/go-utils/log",
