@@ -3,7 +3,8 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  - SAMPLE_APP_URL: https://github.com/bitrise-samples/ionic-conference-app.git
+  - SAMPLE_APP_URL: https://github.com/bitrise-io/ionic-conference-app.git
+  - SAMPLE_APP_BRANCH: latest
 
 workflows:
   test:
@@ -28,10 +29,7 @@ workflows:
         - is_create_path: true
     - script:
         inputs:
-        - content: git clone $SAMPLE_APP_URL .
-    - script:
-        inputs:
-        - content: rm -rf node_modules; rm package-lock.json
+        - content: git clone -b $SAMPLE_APP_BRANCH $SAMPLE_APP_URL .
     - npm:
         inputs:
         - workdir: ./
@@ -42,7 +40,18 @@ workflows:
         - workdir: ./
         - target: emulator
         - platform: ios,android
+        - cordova_version: latest
         - ionic_version: latest
+    - ionic-archive:
+        title: Ionic archive
+        inputs:
+        - workdir: ./
+        - run_ionic_prepare: "false"
+        - target: emulator
+        - platform: ios,android
+        # use versions installed by ionic-prepare
+        - cordova_version: ""
+        - ionic_version: ""
 
   # ----------------------------------------------------------------
   # --- Utility workflows

@@ -7,9 +7,9 @@ description: |-
 
   - `ionic cordova "prepare" "--no-build"`
 
-website: https://github.com/bitrise-community/steps-ionic-prepare
-source_code_url: https://github.com/bitrise-community/steps-ionic-prepare
-support_url: https://github.com/bitrise-community/steps-ionic-prepare/issues
+website: https://github.com/bitrise-steplib/steps-ionic-prepare
+source_code_url: https://github.com/bitrise-steplib/steps-ionic-prepare
+support_url: https://github.com/bitrise-steplib/steps-ionic-prepare/issues
 
 host_os_tags:
   - osx-10.10
@@ -27,7 +27,7 @@ run_if: ""
 
 toolkit:
   go:
-    package_name: github.com/bitrise-community/steps-ionic-prepare
+    package_name: github.com/bitrise-steplib/steps-ionic-prepare
 
 inputs:
   - platform: "ios,android"

@@ -6,12 +6,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/bitrise-community/steps-ionic-archive/ionic"
-	"github.com/bitrise-community/steps-ionic-archive/jsdependency"
 	"github.com/bitrise-io/go-utils/colorstring"
 	"github.com/bitrise-io/go-utils/errorutil"
 	"github.com/bitrise-io/go-utils/log"
 	"github.com/bitrise-io/go-utils/pathutil"
+	"github.com/bitrise-steplib/steps-ionic-archive/ionic"
+	"github.com/bitrise-steplib/steps-ionic-archive/jsdependency"
 	"github.com/bitrise-tools/go-steputils/stepconf"
 	ver "github.com/hashicorp/go-version"
 )
@@ -31,21 +31,21 @@ type config struct {
 func installDependency(packageManager jsdependency.Tool, name string, version string) error {
 	fmt.Println()
 	log.Infof("Updating %s version to: %s", name, version)
+
 	cmdSlice, err := jsdependency.InstallGlobalDependencyCommand(packageManager, name, version)
 	if err != nil {
 		return fmt.Errorf("Failed to update %s version, error: %s", name, err)
 	}
-	for i, cmd := range cmdSlice {
+	for _, cmd := range cmdSlice {
 		fmt.Println()
-		log.Donef("$ %s", cmd.PrintableCommandArgs())
-		fmt.Println()
+		log.Donef("$ %s", cmd.Slice.PrintableCommandArgs())
 
 		// Yarn returns an error if the package is not added before removal, ignoring
-		if out, err := cmd.RunAndReturnTrimmedCombinedOutput(); err != nil && !(packageManager == jsdependency.Yarn && i == 0) {
+		if out, err := cmd.Slice.RunAndReturnTrimmedCombinedOutput(); err != nil && !cmd.IgnoreError {
 			if errorutil.IsExitStatusError(err) {
-				return fmt.Errorf("Failed to update %s version: %s failed, output: %s", name, cmd.PrintableCommandArgs(), out)
+				return fmt.Errorf("Failed to update %s version, output: %s", name, out)
 			}
-			return fmt.Errorf("Failed to update %s version: %s failed, error: %s", name, cmd.PrintableCommandArgs(), err)
+			return fmt.Errorf("Failed to update %s version, error: %s", name, err)
 		}
 	}
 	return nil
@@ -103,7 +103,12 @@ func main() {
 		}
 	}
 	if cfg.IonicVersion != "" {
-		if err := installDependency(packageManager, "ionic", cfg.IonicVersion); err != nil {
+		packageName, err := ionic.PackageNameFromVersion(cfg.IonicVersion)
+		if err != nil {
+			log.Warnf("%s", err)
+		}
+
+		if err := installDependency(packageManager, packageName, cfg.IonicVersion); err != nil {
 			failf("%s", err)
 		}
 	}
