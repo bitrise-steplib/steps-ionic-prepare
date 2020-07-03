@@ -3,17 +3,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:a8eecc71a8044002f95a1da3ac6df70c5ede5665ced304a8f9a40c8b55752e60"
-  name = "github.com/bitrise-community/steps-ionic-archive"
-  packages = [
-    "ionic",
-    "jsdependency",
-  ]
-  pruneopts = "UT"
-  revision = "7869644a568b04e31b29def8df7233b3a9466ea8"
-
-[[projects]]
-  branch = "master"
   digest = "1:594d51ad1ed8d44086145528a32b5e403c43195c0b236a2f6e116e00baa2c0eb"
   name = "github.com/bitrise-io/go-steputils"
   packages = [
@@ -21,11 +10,11 @@
     "tools",
   ]
   pruneopts = "UT"
-  revision = "f540824d77dfd382ce84fd0ee0a9da2fba1cce0a"
+  revision = "94490ca44ddb645764676a94988f6fc7e3187383"
 
 [[projects]]
   branch = "master"
-  digest = "1:540197e862f6636ae91ab877d55ac9c44d3b147c407a5db134d3cbb5f8178c1e"
+  digest = "1:f6514eccbc51d3e6820ce98170e830d7e15f49d249dd43843141733361258618"
   name = "github.com/bitrise-io/go-utils"
   packages = [
     "colorstring",
@@ -35,45 +24,57 @@
     "parseutil",
     "pathutil",
     "pointers",
+    "sliceutil",
   ]
   pruneopts = "UT"
-  revision = "2a09aab8380d7842750328aebd5671bcccea89c8"
+  revision = "0c47c16813a4209321c9d0dba2e75867d6901ff2"
 
 [[projects]]
   branch = "master"
-  digest = "1:dacd83ec550d6d5c2ac83e57f20d45a25a39d79c73be4451771f92572a1f6344"
+  digest = "1:80d1d50bbd49c859fa92b74251371f9b8372be8c8307c5bc7b16e2178fc6f037"
+  name = "github.com/bitrise-steplib/steps-ionic-archive"
+  packages = [
+    "ionic",
+    "jsdependency",
+  ]
+  pruneopts = "UT"
+  revision = "fab48be8d571904c48ab2f2147711d9b5cd71a12"
+
+[[projects]]
+  branch = "master"
+  digest = "1:caf5b6526ab478df1debb4048cc99489d3954975457c4ba63441f489c9053ea2"
   name = "github.com/bitrise-tools/go-steputils"
   packages = ["stepconf"]
   pruneopts = "UT"
-  revision = "ec226b2359fcd806be64f0ad2217d8e741a1ff11"
+  revision = "94490ca44ddb645764676a94988f6fc7e3187383"
 
 [[projects]]
   branch = "master"
-  digest = "1:77395dd3847dac9c45118c668f5dab85aedf0163dc3b38aea6578c5cf0d502f9"
+  digest = "1:95732e0c27df672b3fdf5cdd8edd18cba5fc07263ef7cd25eaaad4afc4730313"
   name = "github.com/hashicorp/go-version"
   packages = ["."]
   pruneopts = "UT"
-  revision = "b5a281d3160aa11950a6182bd9a9dc2cb1e02d50"
+  revision = "59da58cfd357de719a4d16dac30481391a56c002"
 
 [[projects]]
   branch = "master"
-  digest = "1:9f6281d8f50290ba740db82fe5be52877936e47928cd67285ab31b490c202247"
+  digest = "1:9e1d37b58d17113ec3cb5608ac0382313c5b59470b94ed97d0976e69c7022314"
   name = "github.com/pkg/errors"
   packages = ["."]
   pruneopts = "UT"
-  revision = "059132a15dd08d6704c67711dae0cf35ab991756"
+  revision = "614d223910a179a466c1767a985424175c39b465"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/bitrise-community/steps-ionic-archive/ionic",
-    "github.com/bitrise-community/steps-ionic-archive/jsdependency",
     "github.com/bitrise-io/go-steputils/cache",
     "github.com/bitrise-io/go-utils/colorstring",
     "github.com/bitrise-io/go-utils/errorutil",
     "github.com/bitrise-io/go-utils/log",
     "github.com/bitrise-io/go-utils/pathutil",
+    "github.com/bitrise-steplib/steps-ionic-archive/ionic",
+    "github.com/bitrise-steplib/steps-ionic-archive/jsdependency",
     "github.com/bitrise-tools/go-steputils/stepconf",
     "github.com/hashicorp/go-version",
   ]
