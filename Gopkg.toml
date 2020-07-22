@@ -1,18 +1,23 @@
+
 [[constraint]]
+  branch = "master"
+  name = "github.com/bitrise-io/go-steputils"
+
+[[constraint]]
+  branch = "master"
   name = "github.com/bitrise-io/go-utils"
-  branch = "master"
 
 [[constraint]]
+  branch = "master"
+  name = "github.com/bitrise-steplib/steps-ionic-archive"
+
+[[constraint]]
+  branch = "master"
   name = "github.com/bitrise-tools/go-steputils"
-  branch = "master"
 
 [[constraint]]
+  branch = "master"
   name = "github.com/hashicorp/go-version"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/bitrise-community/steps-ionic-archive"
-  branch = "master"
 
 [prune]
   go-tests = true
