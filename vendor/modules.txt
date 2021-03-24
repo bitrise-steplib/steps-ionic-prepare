@@ -1,0 +1,27 @@
+# github.com/bitrise-io/go-steputils v0.0.0-20200227150459-94490ca44ddb
+## explicit
+github.com/bitrise-io/go-steputils/cache
+github.com/bitrise-io/go-steputils/tools
+# github.com/bitrise-io/go-utils v0.0.0-20200629150542-0c47c16813a4
+## explicit
+github.com/bitrise-io/go-utils/colorstring
+github.com/bitrise-io/go-utils/command
+github.com/bitrise-io/go-utils/errorutil
+github.com/bitrise-io/go-utils/log
+github.com/bitrise-io/go-utils/parseutil
+github.com/bitrise-io/go-utils/pathutil
+github.com/bitrise-io/go-utils/pointers
+github.com/bitrise-io/go-utils/sliceutil
+# github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20200703082553-fab48be8d571
+## explicit
+github.com/bitrise-steplib/steps-ionic-archive/ionic
+github.com/bitrise-steplib/steps-ionic-archive/jsdependency
+# github.com/bitrise-tools/go-steputils v0.0.0-20200227150459-94490ca44ddb
+## explicit
+github.com/bitrise-tools/go-steputils/stepconf
+# github.com/hashicorp/go-version v1.2.1
+## explicit
+github.com/hashicorp/go-version
+# github.com/pkg/errors v0.9.1
+## explicit
+github.com/pkg/errors
