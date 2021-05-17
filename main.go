@@ -6,13 +6,13 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/bitrise-io/go-steputils/jsdependency"
+	"github.com/bitrise-io/go-steputils/stepconf"
 	"github.com/bitrise-io/go-utils/colorstring"
 	"github.com/bitrise-io/go-utils/errorutil"
 	"github.com/bitrise-io/go-utils/log"
 	"github.com/bitrise-io/go-utils/pathutil"
 	"github.com/bitrise-steplib/steps-ionic-archive/ionic"
-	"github.com/bitrise-steplib/steps-ionic-archive/jsdependency"
-	"github.com/bitrise-tools/go-steputils/stepconf"
 	ver "github.com/hashicorp/go-version"
 )
 
@@ -113,14 +113,10 @@ func main() {
 		}
 	}
 
-	// Print cordova and ionic version
-	cordovaVer, err := ionic.CordovaVersion()
-	if err != nil {
+	fmt.Println()
+	if err := ionic.CordovaVersion(); err != nil {
 		failf("Failed to get cordova version, error: %s", err)
 	}
-
-	fmt.Println()
-	log.Printf("cordova version: %s", colorstring.Green(cordovaVer.String()))
 
 	ionicVer, err := ionic.Version()
 	if err != nil {
