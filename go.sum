@@ -13,6 +13,8 @@ github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20210419100055-077ab53c67a
 github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20210419100055-077ab53c67aa/go.mod h1:285tueWx4C0G/d5JOHKjRsXBFuSuYM9+kLWoMJJURAk=
 github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286 h1:CyJnmxaSeCa24wIpxiwfYHBhQIUtl32Hnbrf+gv3Qmk=
 github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286/go.mod h1:jsDeEIvkg1unVmbowJ/f5waeVwwHUzpx2Bzq3/yzL6o=
+github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20230403122918-423fdc7d5591 h1:fDOPzTFuLJBnsvMpU6/zyYq62s8sSK0LTVckRy6ViOY=
+github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20230403122918-423fdc7d5591/go.mod h1:UlcU4UGdIg/W1m6sLrf7JXo6lG3QeVsCyuzbD+m2W2A=
 github.com/bitrise-tools/go-steputils v0.0.0-20200227150459-94490ca44ddb/go.mod h1:4eEx1Bd2AAVAN/YGK4V066jO7ekrsLymkyQZzx2UEwQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

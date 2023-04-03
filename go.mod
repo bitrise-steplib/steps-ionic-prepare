@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/bitrise-io/go-steputils v0.0.0-20210527075147-910ce7a105a1
 	github.com/bitrise-io/go-utils v0.0.0-20210713111255-08be784d45d0
-	github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286
+	github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20230403122918-423fdc7d5591
 	github.com/hashicorp/go-version v1.3.0
 )
 
