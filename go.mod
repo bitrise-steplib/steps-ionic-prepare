@@ -1,10 +1,15 @@
 module github.com/bitrise-steplib/steps-ionic-prepare
 
-go 1.16
+go 1.17
 
 require (
-	github.com/bitrise-io/go-steputils v0.0.0-20210514150206-5b6261447e77
-	github.com/bitrise-io/go-utils v0.0.0-20210517140706-aa64fd88ca49
-	github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20210419100055-077ab53c67aa
+	github.com/bitrise-io/go-steputils v0.0.0-20210527075147-910ce7a105a1
+	github.com/bitrise-io/go-utils v0.0.0-20210713111255-08be784d45d0
+	github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286
 	github.com/hashicorp/go-version v1.3.0
+)
+
+require (
+	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 )

@@ -1,12 +1,18 @@
 github.com/bitrise-io/go-steputils v0.0.0-20200227150459-94490ca44ddb/go.mod h1:GXgBV3Frd3qcnsg+NryQTyx1CHjZHr/2w7Bx4WAcB4o=
 github.com/bitrise-io/go-steputils v0.0.0-20210514150206-5b6261447e77 h1:+wd+ADdtJCRL9JEghE1RMbR4ywXBYNvIBelAW/UkWr8=
 github.com/bitrise-io/go-steputils v0.0.0-20210514150206-5b6261447e77/go.mod h1:H0iZjgsAR5NA6pnlD/zKB6AbxEsskq55pwJ9klVmP8w=
+github.com/bitrise-io/go-steputils v0.0.0-20210527075147-910ce7a105a1 h1:gi29hTdxGXAGQvZckPZ9V8BAEfP3eK/tiZgTC5s6h1c=
+github.com/bitrise-io/go-steputils v0.0.0-20210527075147-910ce7a105a1/go.mod h1:H0iZjgsAR5NA6pnlD/zKB6AbxEsskq55pwJ9klVmP8w=
 github.com/bitrise-io/go-utils v0.0.0-20200629150542-0c47c16813a4/go.mod h1:tTEsKvbz1LbzuN/KpVFHXnLtcAPdEgIdM41s0lL407s=
 github.com/bitrise-io/go-utils v0.0.0-20210507100250-37de47dfa6ce/go.mod h1:15EZZf02noI5nWFqXMZEoyb1CyqYRXTMz5Fyu4CWFzI=
 github.com/bitrise-io/go-utils v0.0.0-20210517140706-aa64fd88ca49 h1:du0kI1TU7cv/Hr8U3plyAlMtyOf2kUj4CA4ku5bz20Y=
 github.com/bitrise-io/go-utils v0.0.0-20210517140706-aa64fd88ca49/go.mod h1:DRx7oFuAqk0dbKpAKCqWl0TgrowfJUb/MqYPRscxJOQ=
+github.com/bitrise-io/go-utils v0.0.0-20210713111255-08be784d45d0 h1:AMQb+o8lSsvZOV1vclhTgUF19OgpXKx6aRU/15n0TkE=
+github.com/bitrise-io/go-utils v0.0.0-20210713111255-08be784d45d0/go.mod h1:DRx7oFuAqk0dbKpAKCqWl0TgrowfJUb/MqYPRscxJOQ=
 github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20210419100055-077ab53c67aa h1:P08udS6Ugd6m//t7qPf0KAPXHMkVkOoP0y0s/6wFXuQ=
 github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20210419100055-077ab53c67aa/go.mod h1:285tueWx4C0G/d5JOHKjRsXBFuSuYM9+kLWoMJJURAk=
+github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286 h1:CyJnmxaSeCa24wIpxiwfYHBhQIUtl32Hnbrf+gv3Qmk=
+github.com/bitrise-steplib/steps-ionic-archive v0.0.0-20211103141324-eacdc6e50286/go.mod h1:jsDeEIvkg1unVmbowJ/f5waeVwwHUzpx2Bzq3/yzL6o=
 github.com/bitrise-tools/go-steputils v0.0.0-20200227150459-94490ca44ddb/go.mod h1:4eEx1Bd2AAVAN/YGK4V066jO7ekrsLymkyQZzx2UEwQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -17,6 +23,7 @@ github.com/hashicorp/go-retryablehttp v0.6.6/go.mod h1:vAew36LZh98gCBJNLH42IQ1ER
 github.com/hashicorp/go-version v1.2.1/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
 github.com/hashicorp/go-version v1.3.0 h1:McDWVJIU/y+u1BRV06dPaLfLCaT7fUTJLp5r04x7iNw=
 github.com/hashicorp/go-version v1.3.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
+github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 h1:Z9n2FFNUXsshfwJMBgNA0RU6/i7WVaAegv3PtuIHPMs=
 github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51/go.mod h1:CzGEWj7cYgsdH8dAjBGEr58BoE7ScuLd+fwFZ44+/x8=
 github.com/kisielk/errcheck v1.2.0/go.mod h1:/BMXB+zMLi60iA8Vv6Ksmxu/1UDYcXs4uQLJ+jE2L00=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
