@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	"github.com/bitrise-io/go-utils/command"
-	"github.com/bitrise-io/go-utils/log"
 	ver "github.com/hashicorp/go-version"
 	"github.com/pkg/errors"
 )
@@ -19,7 +18,7 @@ func Version() (*ver.Version, error) {
 	cmd.SetStdin(strings.NewReader("Y"))
 	out, err := cmd.RunAndReturnTrimmedCombinedOutput()
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("%s, output: %s", err, out)
 	}
 
 	// fix for ionic-cli intercative version output: `[1000D[K3.2.0`
@@ -46,12 +45,24 @@ func Version() (*ver.Version, error) {
 }
 
 // CordovaVersion returns cordova version
-func CordovaVersion() error {
-	log.Infof("Cordova version:")
-	cmd := command.NewWithStandardOuts("cordova", "-v")
+func CordovaVersion() (*ver.Version, error) {
+	cmd := command.New("cordova", "-v")
+	out, err := cmd.RunAndReturnTrimmedCombinedOutput()
+	if err != nil {
+		return nil, fmt.Errorf("%s, output: %s", err, out)
+	}
+	re := regexp.MustCompile(`(?:.*[^0-9])?([0-9]+\.[0-9]+\.[0-9]+)(?:[^0-9].*)?`)
+	matches := re.FindStringSubmatch(out)
+	if len(matches) < 2 {
+		return nil, fmt.Errorf("failed to parse version: %s", out)
+	}
+	out = matches[1]
 
-	log.Infof("$ %s", cmd.PrintableCommandArgs())
-	return cmd.Run()
+	version, err := ver.NewVersion(out)
+	if err != nil {
+		return nil, errors.Wrapf(err, "failed to parse version: %s", out)
+	}
+	return version, nil
 }
 
 // LoginCommand returns ionic login comand model

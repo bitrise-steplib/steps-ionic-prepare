@@ -1,20 +1,22 @@
-format_version: 6
+format_version: "12"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
   - SAMPLE_APP_URL: https://github.com/bitrise-io/ionic-conference-app.git
-  - SAMPLE_APP_BRANCH: master
+  # Bitrise Ionic steps don't support Capacitor yet, so we need to use the Cordova version of the app
+  # This is the last commit before the Capacitor migration:
+  - SAMPLE_APP_COMMIT: 34d97d29369377a2f0173a2958de1ee0dadb8a6e
 
 workflows:
   test:
     before_run:
     - audit-this-step
     steps:
-    - go-list:
-    - golint:
-    - errcheck:
-    - go-test:
+    - go-list: {}
+    - golint: {}
+    - errcheck: {}
+    - go-test: {}
     - script:
         inputs:
         - content: |-
@@ -23,17 +25,33 @@ workflows:
             rm -rf ./_tmp
     - change-workdir:
         title: Switch working dir to ./_tmp dir
-        run_if: true
+        run_if: "true"
         inputs:
         - path: ./_tmp
         - is_create_path: true
     - script:
         inputs:
-        - content: git clone -b $SAMPLE_APP_BRANCH $SAMPLE_APP_URL .
+        - content: |-
+            set -exo pipefail
+            git clone $SAMPLE_APP_URL .
+            git checkout $SAMPLE_APP_COMMIT
     - npm:
         inputs:
         - workdir: ./
-        - command: install
+        - command: ci --legacy-peer-deps
+    - script:
+        title: Patch sample app
+        inputs:
+        - content: |-
+            set -exo pipefail
+
+            # https://ionic.io/blog/updates-to-ionic-angular-toolkit
+            npm install @ionic/cordova-builders --legacy-peer-deps
+            sed -i '' 's/@ionic\/angular-toolkit:cordova-build/@ionic\/cordova-builders:cordova-build/g' angular.json
+            sed -i '' 's/@ionic\/angular-toolkit:cordova-serve/@ionic\/cordova-builders:cordova-serve/g' angular.json
+    - set-java-version@1:
+        inputs:
+        - set_java_version: 8
     - path::./:
         title: Step Test
         inputs:
