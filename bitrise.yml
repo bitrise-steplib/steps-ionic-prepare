@@ -42,7 +42,7 @@ workflows:
     - npm:
         inputs:
         - workdir: ./
-        - command: install @ionic/angular-toolkit --legacy-peer-deps
+        - command: install @ionic/angular-toolkit@latest --legacy-peer-deps
     - path::./:
         title: Step Test
         inputs:
