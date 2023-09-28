@@ -39,6 +39,10 @@ workflows:
         inputs:
         - workdir: ./
         - command: ci --legacy-peer-deps
+    - npm:
+        inputs:
+        - workdir: ./
+        - command: install @angular-devkit/build-angular
     - path::./:
         title: Step Test
         inputs:
