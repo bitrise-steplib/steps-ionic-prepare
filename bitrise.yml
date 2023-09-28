@@ -49,6 +49,9 @@ workflows:
             npm install @ionic/cordova-builders --legacy-peer-deps
             sed -i '' 's/@ionic\/angular-toolkit:cordova-build/@ionic\/cordova-builders:cordova-build/g' angular.json
             sed -i '' 's/@ionic\/angular-toolkit:cordova-serve/@ionic\/cordova-builders:cordova-serve/g' angular.json
+    - set-java-version@1:
+        inputs:
+        - set_java_version: 8
     - path::./:
         title: Step Test
         inputs:
