@@ -39,10 +39,16 @@ workflows:
         inputs:
         - workdir: ./
         - command: ci --legacy-peer-deps
-    - npm:
+    - script:
+        title: Patch sample app
         inputs:
-        - workdir: ./
-        - command: install @ionic/angular-toolkit@latest --legacy-peer-deps
+        - content: |-
+            set -exo pipefail
+
+            # https://ionic.io/blog/updates-to-ionic-angular-toolkit
+            npm install @ionic/cordova-builders --legacy-peer-deps
+            sed -i '' 's/@ionic\/angular-toolkit:cordova-build/@ionic\/cordova-builders:cordova-build/g' angular.json
+            sed -i '' 's/@ionic\/angular-toolkit:cordova-serve/@ionic\/cordova-builders:cordova-serve/g' angular.json
     - path::./:
         title: Step Test
         inputs:
