@@ -1,11 +1,27 @@
 title: Ionic prepare
 summary: Prepares your Ionic project
 description: |-
-  Prepares your Ionic project.
+  This Step prepares your Ionic project by calling `ionic cordova prepare --no build` and copying files into platform(s), preparing the project to be built.
 
-  The step prepares your Ionic project by calling:
+  ### Configuring the Step
 
-  - `ionic cordova "prepare" "--no-build"`
+  To configure the Step:
+
+  1. **Platform**: Make sure to set the **Platform** input to a value (`ios`, `android`, or both) that matches your project's settings.
+  1. **Ionic version**: This input can be used to install a specific version of Ionic. By default, the pre-installed version will be used, which can differ from stack to stack. Check the current stack images [here](https://github.com/bitrise-io/bitrise.io/tree/master/system_reports).
+  1. **Working directory**: If you have your `config.xml` file at the root of your repository, you don't have to set anything for this input. If it's located elsewhere, make sure this input points to that directory.
+  1. **Ionic username** and **Ionic password**: If you want to use the Ionic CLI within the Step, create Secrets for your Ionic username and password and them respectively to the **Ionic username** and **Ionic password** inputs. 
+  1. **Cache enabled**: You can use this input to enable caching for `node_modules` provided you have the **Cache Pull** and **Cache Push** Steps set up.
+
+  ### Useful links
+
+  * [Ionic/Cordova code signing with automatic code signing asset management](https://devcenter.bitrise.io/en/code-signing/ios-code-signing/ios-code-signing-for-ionic-and-cordova-projects.html#ionic-cordova-code-signing-with-automatic-code-signing-asset-management-72205)
+
+  ### Related Steps
+
+  * [Ionic Archive](https://www.bitrise.io/integrations/steps/ionic-archive)
+  * [Cordova Prepare](https://www.bitrise.io/integrations/steps/cordova-prepare)
+  * [Manage iOS Code Signing]https://www.bitrise.io/integrations/steps/manage-ios-code-signing
 
 website: https://github.com/bitrise-steplib/steps-ionic-prepare
 source_code_url: https://github.com/bitrise-steplib/steps-ionic-prepare
